@@ -29,8 +29,18 @@ This template also contains a prepared webpack configuration.
 * Check Controller.php: it checks if the project runs in production or development mode and loads the corresponding files
 
 ## Deployment to Heroku
+### Depolyment with Git
+Create a new app in Heroku and connect your GitHub repository. Do not forget to install the PHP buildpack in the settings.
+
+NOTE: Make sure you set a config variable `PHP_AUTOLOAD_PATH` in your heroko project with the value `../vendor/autoload.php`
+
+### Deployment with the command line
+Make sure you have installed the Heroku CLI. This is done on MacOS by using Homebrew. So, you need to install Homebrew first. Once it is installed you can install the Heroku CLI by executing the following command: `brew tap heroku/brew && brew install heroku``
+
 You can use the script deploy-heroku to deploy your project. This script can be executed in the terminal and requires 2 parameters:
 1. path to the folder of your project 
 2. name of your project in Heroku
 
 For example: `./deploy-heroku ./www/html/php-template-project name-of-heroku-project`
+
+NOTE: Make sure you set a config variable `PHP_AUTOLOAD_PATH` in your heroko project with the value `./vendor/autoload.php`
