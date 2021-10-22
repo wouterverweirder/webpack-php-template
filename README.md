@@ -27,3 +27,10 @@ This template also contains a prepared webpack configuration.
 * All files for a project can be found in [www/html/php-template-project](www/html/php-template-project). 
 * Check the config file and note that the dev server runs on port 3000 and HTML rendering is in comments
 * Check Controller.php: it checks if the project runs in production or development mode and loads the corresponding files
+
+## Deployment to Heroku
+You can use the script deploy-heroku to deploy your project. This script can be executed in the terminal and requires 2 parameters:
+1. path to the folder of your project 
+2. name of your project in Heroku
+
+For example: `./deploy-heroku ./www/html/php-template-project name-of-heroku-project`
