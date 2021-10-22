@@ -48,5 +48,5 @@ echo "Step 7: clean up of the project"
 cd $ROOT_DIR
 rm -R heroku
 # remove the docker container and image
-docker rmi $(docker images -q registry.heroku.com/todolist-docker-test/web)
+docker rmi $(docker images -q registry.heroku.com/$HEROKU_DOMAIN/web)
 docker rmi $(docker images -q local)
