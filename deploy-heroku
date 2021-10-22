@@ -45,9 +45,8 @@ heroku container:push web -a $HEROKU_DOMAIN
 heroku container:release web -a $HEROKU_DOMAIN
 
 echo "Step 7: clean up of the project"
-#cd $ROOT_DIR
-#rm -R heroku
+cd $ROOT_DIR
+rm -R heroku
 # remove the docker container and image
-#head -n -1 $DOCKERFILE #removing last line in Dockerfile again
-# remove image: docker rmi $(docker images -q registry.heroku...)
-
+docker rmi $(docker images -q registry.heroku.com/todolist-docker-test/web)
+docker rmi $(docker images -q local)
