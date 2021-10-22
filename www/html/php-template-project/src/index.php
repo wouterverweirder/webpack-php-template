@@ -3,6 +3,15 @@ session_start();
 ini_set('display_errors', true);
 error_reporting(E_ALL);
 
+// parsing the .env file if available
+// convert content to key / value pairs
+if (file_exists("../.env")) {
+  $variables = parse_ini_file("../.env", true);
+  foreach ($variables as $key => $value) {
+    putenv("$key=$value");
+  }
+}
+
 require_once "../../../vendor/autoload.php";
 require_once "./bootstrap/database.php";
 
