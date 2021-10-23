@@ -5,12 +5,12 @@ class Controller {
   public $route;
   protected $viewVars = array();
   // set environment to development by default
-  protected $env = 'development';
+  protected $mode = 'development';
 
   public function filter() {
     // switch environment to production if the file is not in a folder named 'src'
     if (basename(dirname(dirname(__FILE__))) != 'src') {
-      $this->env = 'production';
+      $this->mode = 'production';
     }
     call_user_func(array($this, $this->route['action']));
   }
@@ -22,7 +22,7 @@ class Controller {
     $this->set('css', '');
 
     // link starting js and css files from the dist folder in production
-    if ($this->env == 'production') {
+    if ($this->mode == 'production') {
       $this->set('js', '<script src="script.js"></script>');
       $this->set('css', '<link href="style.css" rel="stylesheet">');
     }
