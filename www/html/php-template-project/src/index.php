@@ -1,10 +1,7 @@
 <?php
 session_start();
 ini_set('display_errors', true);
-
-if (!getenv('PHP_AUTOLOAD_PATH')) {
-  error_reporting(E_ALL);
-}
+error_reporting(E_ALL);
 
 // parsing the .env file if available
 // convert content to key / value pairs
